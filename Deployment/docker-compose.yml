@@ -1,0 +1,19 @@
+version: '2'
+services:
+  knowledge_db:
+    build: ./knowledge_db/
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=user 
+      - MYSQL_PASSWORD=password 
+      - MYSQL_DATABASE=KnowledgeBase 
+      - MYSQL_ROOT_HOST=172.17.0.1 
+  similarity-engine:
+    build: ./similarity_engine/
+    links:
+      - knowledge_db
+    depends_on:
+      - knowledge_db
+    ports:
+      - "8080:8080"
