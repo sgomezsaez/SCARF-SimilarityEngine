@@ -1,7 +1,8 @@
 version: '2'
 services:
-  knowledge_db:
+  mysql:
     build: ./knowledge_db/
+    container_name: knowledge-db
     ports:
       - "3306:3306"
     environment:
@@ -9,11 +10,18 @@ services:
       - MYSQL_PASSWORD=password 
       - MYSQL_DATABASE=KnowledgeBase 
       - MYSQL_ROOT_HOST=172.17.0.1 
+    networks:
+      - mysql_net
   similarity-engine:
     build: ./similarity_engine/
     links:
-      - knowledge_db
+      - mysql:mysql
     depends_on:
-      - knowledge_db
+      - mysql
     ports:
       - "8080:8080"
+    networks:
+      - mysql_net
+networks:
+  mysql_net:
+    driver: bridge
