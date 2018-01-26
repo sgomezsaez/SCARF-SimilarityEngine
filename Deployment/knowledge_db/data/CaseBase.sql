@@ -19,10 +19,10 @@
 -- Table structure for table `app_description`
 --
 
-DROP TABLE IF EXISTS `app_description`;
+#DROP TABLE IF EXISTS `app_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `app_description` (
+CREATE TABLE IF NOT EXISTS `app_description` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_solution_id` int(11) DEFAULT NULL,
   `fk_qosspec_id` int(11) DEFAULT NULL,
@@ -48,10 +48,10 @@ UNLOCK TABLES;
 -- Table structure for table `hard_constraints`
 --
 
-DROP TABLE IF EXISTS `hard_constraints`;
+#DROP TABLE IF EXISTS `hard_constraints`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `hard_constraints` (
+CREATE TABLE IF NOT EXISTS `hard_constraints` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `value` varchar(45) DEFAULT NULL,
@@ -75,10 +75,10 @@ UNLOCK TABLES;
 -- Table structure for table `performance`
 --
 
-DROP TABLE IF EXISTS `performance`;
+#DROP TABLE IF EXISTS `performance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `performance` (
+CREATE TABLE IF NOT EXISTS `performance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
@@ -98,10 +98,10 @@ UNLOCK TABLES;
 -- Table structure for table `performance_metric`
 --
 
-DROP TABLE IF EXISTS `performance_metric`;
+#DROP TABLE IF EXISTS `performance_metric`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `performance_metric` (
+CREATE TABLE IF NOT EXISTS `performance_metric` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `fk_category_id` int(11) DEFAULT NULL,
@@ -125,10 +125,10 @@ UNLOCK TABLES;
 -- Table structure for table `performance_metric_category`
 --
 
-DROP TABLE IF EXISTS `performance_metric_category`;
+#DROP TABLE IF EXISTS `performance_metric_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `performance_metric_category` (
+CREATE TABLE IF NOT EXISTS `performance_metric_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -149,10 +149,10 @@ UNLOCK TABLES;
 -- Table structure for table `performance_metric_descriptor`
 --
 
-DROP TABLE IF EXISTS `performance_metric_descriptor`;
+#DROP TABLE IF EXISTS `performance_metric_descriptor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `performance_metric_descriptor` (
+CREATE TABLE IF NOT EXISTS `performance_metric_descriptor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `min` float DEFAULT NULL,
   `max` float DEFAULT NULL,
@@ -182,10 +182,10 @@ UNLOCK TABLES;
 -- Table structure for table `qos_specification`
 --
 
-DROP TABLE IF EXISTS `qos_specification`;
+#DROP TABLE IF EXISTS `qos_specification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `qos_specification` (
+CREATE TABLE IF NOT EXISTS `qos_specification` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_workload_id` int(11) DEFAULT NULL,
   `fk_performance_id` int(11) DEFAULT NULL,
@@ -211,10 +211,10 @@ UNLOCK TABLES;
 -- Table structure for table `similarity_table`
 --
 
-DROP TABLE IF EXISTS `similarity_table`;
+#DROP TABLE IF EXISTS `similarity_table`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `similarity_table` (
+CREATE TABLE IF NOT EXISTS `similarity_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -227,7 +227,7 @@ CREATE TABLE `similarity_table` (
 
 LOCK TABLES `similarity_table` WRITE;
 /*!40000 ALTER TABLE `similarity_table` DISABLE KEYS */;
-INSERT INTO `similarity_table` VALUES (1,'pattern'),(2,'arrival_rate'),(3,'behavioral_model'),(4,'node_type');
+INSERT INTO `similarity_table` VALUES (1,'pattern'),(2,'arrival_rate'),(3,'behavioral_model');
 /*!40000 ALTER TABLE `similarity_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,10 +235,10 @@ UNLOCK TABLES;
 -- Table structure for table `table_entry`
 --
 
-DROP TABLE IF EXISTS `table_entry`;
+#DROP TABLE IF EXISTS `table_entry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table_entry` (
+CREATE TABLE IF NOT EXISTS `table_entry` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `column_name` varchar(45) DEFAULT NULL,
   `row_name` varchar(45) DEFAULT NULL,
@@ -264,10 +264,10 @@ UNLOCK TABLES;
 -- Table structure for table `viable_topology_distribution`
 --
 
-DROP TABLE IF EXISTS `viable_topology_distribution`;
+#DROP TABLE IF EXISTS `viable_topology_distribution`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `viable_topology_distribution` (
+CREATE TABLE IF NOT EXISTS `viable_topology_distribution` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` text,
   `url` text,
@@ -290,10 +290,10 @@ UNLOCK TABLES;
 -- Table structure for table `workload`
 --
 
-DROP TABLE IF EXISTS `workload`;
+#DROP TABLE IF EXISTS `workload`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `workload` (
+CREATE TABLE IF NOT EXISTS `workload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pattern` varchar(45) DEFAULT NULL,
   `arrival_rate` varchar(45) DEFAULT NULL,

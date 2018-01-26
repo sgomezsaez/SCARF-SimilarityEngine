@@ -4,7 +4,9 @@ MAINTAINER Santiago Gomez - sgomezsaez@gmail.com
 ENV MYSQL_ROOT_PASSWORD password
 ENV MYSQL_DATABASE KnowledgeBase
 
-COPY CaseBase.sql /docker-entrypoint-initdb.d/CaseBase.sql
+COPY data/CaseBase.sql /docker-entrypoint-initdb.d/CaseBase.sql
+
+#VOLUME ["/var/lib/mysql"]
 
 ENTRYPOINT ["/entrypoint.sh"]
 HEALTHCHECK CMD /healthcheck.sh
