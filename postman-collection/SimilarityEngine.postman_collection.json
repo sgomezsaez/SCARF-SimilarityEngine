@@ -1,0 +1,498 @@
+{
+	"info": {
+		"name": "SimilarityEngine",
+		"_postman_id": "96d1c9ec-2487-6748-fa6e-04460138443f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getSimilarityTables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/similarity-tables",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"similarity-tables"
+					]
+				},
+				"description": "Get request to obatain the list of existing similarity tables"
+			},
+			"response": []
+		},
+		{
+			"name": "createSimTableNodeType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityTable>\n    <simTableID></simTableID>\n    <simTableName>node_type</simTableName>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.7</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Wiki_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>B2C_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>B2C_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>B2C_App</row>\n        <simValue>0.5</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>B2C_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>B2C_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>eLearning_App</row>\n        <simValue>0.8</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>eLearning_App</row>\n        <simValue>0.1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>eLearning_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>eLearning_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>eLearning_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Smart_City_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0.15</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0.4</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Simulation_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Simulation_App</row>\n        <simValue>0.2</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Simulation_App</row>\n        <simValue>0.5</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Simulation_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Simulation_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n</SimilarityTable>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/similarity-table",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"similarity-table"
+					]
+				},
+				"description": "Creates in the database the simlarity table and their entries "
+			},
+			"response": []
+		},
+		{
+			"name": "retieveKnowledge",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge/10",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge",
+						"10"
+					]
+				},
+				"description": "GET Request to retrieve knowledge of an application in this case with ID 10"
+			},
+			"response": []
+		},
+		{
+			"name": "appDiscoverability",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <SimilarApps>\n    <app_id>250</app_id>\n    <app_id>93</app_id>\n    <app_id>89</app_id>\n    <app_id>83</app_id>\n    <app_id>10</app_id>\n  </SimilarApps>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>4800</avg_users>\n    <avg_transactions>14000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-discoverability",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-discoverability"
+					]
+				},
+				"description": "POST request to discover similar non-functional applications, given the Workload\nand Performance Characteristics depicted in the XML document sent in the body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>100</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>4800</avg_users>\n    <avg_transactions>14000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>testPostman</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/testPostman/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>testPostman</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-MediaWiki",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>81</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>200</avg_users>\n    <avg_transactions>1000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>MediaWiki</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/MediaWiki/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>MediaWiki</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-Confluence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>85</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>200</avg_users>\n    <avg_transactions>1000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>Confluence</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/Confluence/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>Confluence</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-OPAL_Simulation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>90</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>200</avg_users>\n    <avg_transactions>1000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>Opal_Simulation</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/Opal_Simulation/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>Confluence</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-TripBooking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>99</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>200</avg_users>\n    <avg_transactions>1000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>TripBooking</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/TripBooking/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>TripBooking</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "persistKnowledge-Moodle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>94</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>200</avg_users>\n    <avg_transactions>1000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min></min>\n        <max></max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>Moodle</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/Moodle/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>Moodle</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "POST Request to persist the knowledge of the application depicted in the XML\nsent in the  body"
+			},
+			"response": []
+		},
+		{
+			"name": "updateSimilarityTableWorkloadPattern",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityTable>\n    <simTableID>1</simTableID>\n    <simTableEntry>\n        <column>periodic</column>\n        <row>static</row>\n        <simValue>0.2</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>static</column>\n        <row>periodic</row>\n        <simValue>0.2</simValue>\n    </simTableEntry>\n</SimilarityTable>\n  "
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/similarity-table",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"similarity-table"
+					]
+				},
+				"description": "PUT Request to modify the similarity value of entries of a similarity table given \nthe Table ID, the column, row and similarity value depicted in the body\nas XML"
+			},
+			"response": []
+		},
+		{
+			"name": "updateSimilarityTableNodeType",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityTable>\n    <simTableID>4</simTableID>\n    <simTableName>node_type</simTableName>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.7</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Wiki_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Wiki_App</row>\n        <simValue>0.0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>B2C_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>B2C_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>B2C_App</row>\n        <simValue>0.5</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>B2C_App</row>\n        <simValue>0.25</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>B2C_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>eLearning_App</row>\n        <simValue>0.8</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>eLearning_App</row>\n        <simValue>0.1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>eLearning_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>eLearning_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>eLearning_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Smart_City_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0.15</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Smart_City_App</row>\n        <simValue>0.4</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Simulation_App</column>\n        <row>Simulation_App</row>\n        <simValue>1</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>B2C_App</column>\n        <row>Simulation_App</row>\n        <simValue>0.2</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Smart_City_App</column>\n        <row>Simulation_App</row>\n        <simValue>0.5</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>eLearning_App</column>\n        <row>Simulation_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n    <simTableEntry>\n        <column>Wiki_App</column>\n        <row>Simulation_App</row>\n        <simValue>0</simValue>\n    </simTableEntry>\n</SimilarityTable>\n  "
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/similarity-table",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"similarity-table"
+					]
+				},
+				"description": "PUT Request to modify the similarity value of entries of a similarity table given \nthe Table ID, the column, row and similarity value depicted in the body\nas XML"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Knowledge",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<SimilarityData>\n  <appAlphaID>87</appAlphaID>\n  <Workload>\n    <pattern>periodic</pattern>\n    <arrival>normal</arrival>\n    <behavioral>logarithmic</behavioral>\n    <avg_users>4800</avg_users>\n    <avg_transactions>14000</avg_transactions>\n  </Workload>\n  <Performance>\n    <time_behaviour>\n      <response_time>\n        <min>500</min>\n        <max>2000</max>\n        <avg>1000</avg>\n        <st></st>\n      </response_time>\n      <throughput>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </throughput>\n      <processing_time>\n        <min></min>\n        <max></max>\n        <avg>800</avg>\n        <st></st>\n      </processing_time>\n      <avg_read_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_read_speed>\n      <avg_write_speed>\n        <min></min>\n        <max></max>\n        <avg>8000</avg>\n        <st></st>\n      </avg_write_speed>\n      <avg_migration_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st>8.5</st>\n      </avg_migration_time>\n      <latency>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </latency>\n      <backup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </backup_time>\n    </time_behaviour>\n    <capacity>\n      <bandwith>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </bandwith>\n      <processor_speed>\n        <min></min>\n        <max></max>\n        <avg>15</avg>\n        <st></st>\n      </processor_speed>\n      <storage_size>\n        <min></min>\n        <max></max>\n        <avg>400</avg>\n        <st></st>\n      </storage_size>\n      <memory_allocation_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_allocation_vm>\n      <number_vm>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm>\n      <number_processors>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_processors>\n      <io_operations>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </io_operations>\n    </capacity>\n    <resource_utilization>\n      <network_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </network_utilization>\n      <memory_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </memory_utilization>\n      <disk_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </disk_utilization>\n      <cpu_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cpu_utilization>\n      <vm_utilization>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_utilization>\n      <number_vm_perserver>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </number_vm_perserver>\n    </resource_utilization>\n    <scalability>\n      <resource_acquisition_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_acquisition_time>\n      <resource_provisioning_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_provisioning_time>\n      <deployment_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </deployment_time>\n      <resource_release_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </resource_release_time>\n      <vm_startup_time>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </vm_startup_time>\n    </scalability>\n    <availability>\n      <cloud_service_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_service_uptime>\n      <cloud_resource_uptime>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </cloud_resource_uptime>\n      <meantime_between_failures>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_between_failures>\n      <meantime_repair>\n        <min></min>\n        <max></max>\n        <avg></avg>\n        <st></st>\n      </meantime_repair>\n    </availability>\n  </Performance>\n  <Solution>\n    <name>testPostman</name>\n    <view_url>/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/testPostman/topologytemplate/?view</view_url>\n    <dist_url_host>http%3A%2F%2Flocalhost%3A8080%2Fwinery%2F</dist_url_host>\n    <dist_url_nsmu>http://www.eclipse.org/winery/model/selfservice</dist_url_nsmu>\n    <dist_url_muid>testPostman</dist_url_muid>\n  </Solution>\n</SimilarityData>"
+				},
+				"url": {
+					"raw": "http://{{url_similarity_engine}}/SimilarityEngine/application-knowledge",
+					"protocol": "http",
+					"host": [
+						"{{url_similarity_engine}}"
+					],
+					"path": [
+						"SimilarityEngine",
+						"application-knowledge"
+					]
+				},
+				"description": "PUT request that updates the non functional characteristics of the application \ndepicted in the body of the request"
+			},
+			"response": []
+		},
+		{
+			"name": "saveAlphaTopologyPERTOS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<AlphaTopologyTemplate>\n  <specificationType>xml</specificationType>\n  <specification>\n    <tosca:Definitions xmlns:tosca=\"http://docs.oasis-open.org/tosca/ns/2011/12\" xmlns:ns0=\"http://www.eclipse.org/winery/model/selfservice\" xmlns:winery=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\">\n      <tosca:ServiceTemplate id=\"test\" name=\"test\" targetNamespace=\"http://www.eclipse.org/winery/model/selfservice\">\n        <tosca:TopologyTemplate xmlns=\"http://docs.oasis-open.org/tosca/ns/2011/12\" xmlns:winery=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\">\n          <tosca:NodeTemplate id=\"MediaWiki_WebApp\" name=\"AlphaMediaWiki\" type=\"ns0:MediaWiki_WebApp\" winery:x=\"577\" winery:y=\"23\" />\n          <tosca:NodeTemplate id=\"MediaWikiPHP_App\" name=\"AlphaPHP_App\" type=\"ns0:MediaWikiPHP_App\" winery:x=\"301\" winery:y=\"139\" />\n          <tosca:NodeTemplate id=\"WikiDB_MySQLDB\" name=\"AlphaWikiDB_MySQL\" type=\"ns0:WikiDB_MySQLDB\" winery:x=\"841\" winery:y=\"144\" />\n          <tosca:RelationshipTemplate id=\"con_28\" name=\"con_28\" type=\"winery:ConsistsOf\">\n            <tosca:SourceElement ref=\"MediaWiki_WebApp\" />\n            <tosca:TargetElement ref=\"MediaWikiPHP_App\" />\n          </tosca:RelationshipTemplate>\n          <tosca:RelationshipTemplate id=\"con_40\" name=\"con_40\" type=\"winery:ConsistsOf\">\n            <tosca:SourceElement ref=\"MediaWiki_WebApp\" />\n            <tosca:TargetElement ref=\"WikiDB_MySQLDB\" />\n          </tosca:RelationshipTemplate>\n        </tosca:TopologyTemplate>\n      </tosca:ServiceTemplate>\n    </tosca:Definitions>\n  </specification>\n  <nodelevel>\n    <node id=\"MediaWiki_WebApp\">\n      <level>root</level>\n    </node>\n    <node id=\"MediaWikiPHP_App\">\n      <level>leaf</level>\n    </node>\n    <node id=\"WikiDB_MySQLDB\">\n      <level>leaf</level>\n    </node>\n  </nodelevel>\n</AlphaTopologyTemplate>"
+				},
+				"url": {
+					"raw": "http://{{url_pertos}}/pertos/topology/alphatopology",
+					"protocol": "http",
+					"host": [
+						"{{url_pertos}}"
+					],
+					"path": [
+						"pertos",
+						"topology",
+						"alphatopology"
+					]
+				},
+				"description": "Request to store in PERTOS the depicted alpha topology"
+			},
+			"response": []
+		},
+		{
+			"name": "getSimilarTopologiesPERTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{url_pertos}}/pertos/similartopology/10",
+					"protocol": "http",
+					"host": [
+						"{{url_pertos}}"
+					],
+					"path": [
+						"pertos",
+						"similartopology",
+						"10"
+					]
+				},
+				"description": "This requests returns the list of topologies thatare similar to the one identified \nby the ID sent as part of the requirement"
+			},
+			"response": []
+		},
+		{
+			"name": "persistTopologyWinery",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<TopologyTemplate xmlns=\"http://docs.oasis-open.org/tosca/ns/2011/12\" xmlns:winery=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\">\n  <NodeTemplate id=\"MediaWiki_WebApp\" name=\"AlphaMediaWiki\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:MediaWiki_WebApp\" winery:x=\"577\" winery:y=\"23\" />\n  <NodeTemplate id=\"MediaWikiPHP_App\" name=\"AlphaPHP_App\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:MediaWikiPHP_App\" winery:x=\"301\" winery:y=\"139\" />\n  <NodeTemplate id=\"WikiDB_MySQLDB\" name=\"AlphaWikiDB_MySQL\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:WikiDB_MySQLDB\" winery:x=\"841\" winery:y=\"144\" />\n  <NodeTemplate id=\"ApachePHPModule\" name=\"ApachePHPModule\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:ApachePHPModule\" winery:x=\"243\" winery:y=\"239\" />\n  <NodeTemplate id=\"ApacheWebserver\" name=\"ApacheWebserver\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:ApacheWebserver\" winery:x=\"224\" winery:y=\"362\" />\n  <NodeTemplate id=\"UbuntuVM\" name=\"UbuntuVM\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:UbuntuVM\" winery:x=\"217\" winery:y=\"482\" />\n  <NodeTemplate id=\"AmazonEC2\" name=\"AmazonEC2\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:AmazonEC2\" winery:x=\"206\" winery:y=\"610\" />\n  <NodeTemplate id=\"MySQLServer\" name=\"MySQLServer\" xmlns:ty=\"http://www.eclipse.org/winery/model/selfservice\" type=\"ty:MySQLServer\" winery:x=\"755\" winery:y=\"461\" />\n  <RelationshipTemplate id=\"con_28\" name=\"con_28\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:ConsistsOf\">\n    <SourceElement ref=\"MediaWiki_WebApp\" />\n    <TargetElement ref=\"MediaWikiPHP_App\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_40\" name=\"con_40\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:ConsistsOf\">\n    <SourceElement ref=\"MediaWiki_WebApp\" />\n    <TargetElement ref=\"WikiDB_MySQLDB\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_40\" name=\"con_40\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:InteractsWith\">\n    <SourceElement ref=\"MediaWikiPHP_App\" />\n    <TargetElement ref=\"WikiDB_MySQLDB\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_94\" name=\"con_94\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"MediaWikiPHP_App\" />\n    <TargetElement ref=\"ApachePHPModule\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_106\" name=\"con_106\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"ApachePHPModule\" />\n    <TargetElement ref=\"ApacheWebserver\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_118\" name=\"con_118\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"ApacheWebserver\" />\n    <TargetElement ref=\"UbuntuVM\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_130\" name=\"con_130\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"UbuntuVM\" />\n    <TargetElement ref=\"AmazonEC2\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_142\" name=\"con_142\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"WikiDB_MySQLDB\" />\n    <TargetElement ref=\"MySQLServer\" />\n  </RelationshipTemplate>\n  <RelationshipTemplate id=\"con_154\" name=\"con_154\" xmlns:ty=\"http://www.opentosca.org/winery/extensions/tosca/2013/02/12\" type=\"ty:HostedOn\">\n    <SourceElement ref=\"MySQLServer\" />\n    <TargetElement ref=\"UbuntuVM\" />\n  </RelationshipTemplate>\n</TopologyTemplate>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/winery/servicetemplates/http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice/testRequests/topologytemplate/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"winery",
+						"servicetemplates",
+						"http%253A%252F%252Fwww.eclipse.org%252Fwinery%252Fmodel%252Fselfservice",
+						"testRequests",
+						"topologytemplate",
+						""
+					]
+				},
+				"description": "Stores the  service template of a mu topology in Winery of an entry \npreviously created with the name and namespace (check request create Topology Winery)\n"
+			},
+			"response": []
+		},
+		{
+			"name": "createTopologyWinery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "testRequest",
+							"type": "text"
+						},
+						{
+							"key": "namespace",
+							"value": "http://www.eclipse.org/winery/model/selfservice",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/winery/servicetemplates/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"winery",
+						"servicetemplates",
+						""
+					]
+				},
+				"description": "This request creates a new topology in winery given a name and a namesapce"
+			},
+			"response": []
+		}
+	]
+}
